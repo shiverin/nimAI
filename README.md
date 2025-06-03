@@ -20,19 +20,18 @@ The Nim game consists of several piles of objects, where two players alternate t
 
 - **Training Loop**: The AI trains by playing many games against itself (`n` iterations). During each game, it records states, actions, and resulting states to update Q-values.
 
-- **Q-Value Update Rule**: Q-values are updated iteratively using the formula:
+**Q-Value Update Rule:**
+```
+Q(s, a) ← Q(s, a) + α * (reward + γ * max_a' Q(s', a') - Q(s, a))
+```
+where:
 
-  \[
-  Q(s, a) \leftarrow Q(s, a) + \alpha \times \big(\text{reward} + \gamma \times \max_{a'} Q(s', a') - Q(s, a)\big)
-  \]
-
-  where:
-  - \(\alpha\) is the learning rate,
-  - \(\gamma\) is the discount factor for future rewards (implicitly 1 here),
-  - \(s\) and \(a\) are the old state and action,
-  - \(s'\) is the new state,
-  - reward is the immediate reward received,
-  - and \(\max_{a'} Q(s', a')\) is the best future expected reward from the new state.
+- α (alpha) is the learning rate,
+- γ (gamma) is the discount factor for future rewards (implicitly 1 here),
+- s and a are the old state and action,
+- s' is the new state,
+- reward is the immediate reward received,
+- max_a' Q(s', a') is the maximum expected future reward from the new state.
 
 - **Action Selection (Exploration vs Exploitation)**: The AI balances exploration and exploitation using an epsilon-greedy policy—randomly choosing actions with probability \(\epsilon\), or the best-known action otherwise.
 
