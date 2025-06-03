@@ -52,7 +52,6 @@ where:
 - Mastery of **reinforcement learning concepts**, especially Q-learning for discrete state-action spaces.
 - Practical implementation of **state-action value functions** and efficient Q-table updates.
 - Application of **epsilon-greedy policies** for balancing exploration and exploitation.
-- Strong understanding of **game theory** and dynamic programming techniques.
 - Proficiency in Python with object-oriented programming and algorithmic design.
 
 ---
